@@ -1,0 +1,28 @@
+---
+import CardService from "./CardService.astro"
+
+const PUBLICIONES = [{
+    title: "Carrito Personalizado",
+    description: 'Regala un carrito personalizado con el nombre de tu hijo, sobrino, nieto, etc. ',
+    img:"/img/carrito2.jpg",
+    mensaje: "Hola, me gustaría saber más sobre el carrito personalizado"
+},
+{
+    title: "Cuadro Perzonalizado",
+    description: 'Regala un cuadro para esa persona especial'+
+    ' con una foto de un momento especial o un mensaje especial, calendario de cumpleaños, etc.',
+    img:"/img/cuadro.jpg",
+    mensaje: "Hola, me gustaría saber más sobre el cuadro personalizado"
+} 
+]
+---
+
+<ol class="flex flex-col md:flex-row gap-2 ml-2 mr-2">
+    {
+        PUBLICIONES.map(publi=> (
+            <li class="mb-10">
+                <CardService {...publi}/>
+            </li>
+        ))
+    }
+</ol>

@@ -1,20 +1,80 @@
+---
+import BlogCard from "../components/BlogCard.astro";
+import Footer from "../components/Footer.astro";
+import HamburgerMenu from "../components/HamburgerMenu";
+import 'flowbite';
+---
+
 <!doctype html>
 <html lang="en">
 	<head>
+		<script is:inline src="https://cdn.jsdelivr.net/npm/flowbite@3.0.0/dist/flowbite.min.js"></script>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="icon" type="image/svg+xml" href="/logomf.ico" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Astro Basics</title>
+		<title>MF Regalos</title>
 	</head>
 	<body>
-		<slot />
+		<HamburgerMenu client:load />
+		<section
+			id="about"
+			class="bg-[radial-gradient(100%_50%_at_50%_0%,rgba(0,163,255,0.13)_0,rgba(0,163,255,0)_50%,rgba(0,163,255,0)_100%)]"
+		>
+			<div class="flex flex-col md:flex-row items-center justify-center gap-12 ">
+				<div class="md:w-1/2 justify-center items-center">
+					<h1
+						class="text-4xl font-bold text-center mb-8 text-purple-500"
+					>
+						¡Bienvenido a MF Regalos!
+					</h1>
+					<h1 class="text-2xl font-bold text-center mb-5">
+						"Un detalle especial para esa persona especial"
+					</h1>
+					<div class="px-20 h-1/2 md:h-1/2 ">
+						<p class="text-sm text-neutral-700  text-center">
+							Emprendimieto de regalos personalizados, fundado por una
+							pareja dispuesta a crear detalles especiales para
+							personas especiales.
+						<p/>
+						
+					</div>
+					
+				</div>
+				<img
+					class="h-[450px] w-full  md:w-1/2 "
+					src="/img/MFIMAGEN.webp"
+					alt="Logo de la empresa"
+					width="400"
+					height="400"
+				/>
+			</div>
+		</section>
+		<main>
+			<slot />
+		</main>
+		<section
+			id="servicios"
+			class="flex flex-col items-center justify-center py-5"
+		>
+			<h2 class="text-2xl font-bold flex gap-1 items-center mb-6">
+				Servicios
+			</h2>
+			<BlogCard />
+		</section>
+		<Footer/>
 	</body>
 </html>
 
-<style>
-	html,
+<style is:global>
+	html {
+		font-family: system-ui, serif;
+		background: #f9fafb;
+	}
+
 	body {
+		flex-direction: column;
+		display: flex;
 		margin: 0;
 		width: 100%;
 		height: 100%;

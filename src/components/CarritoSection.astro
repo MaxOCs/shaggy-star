@@ -1,0 +1,21 @@
+---
+import Carrusel from "./Carrusel.astro";
+---
+
+<section id="blog" class="bg-[radial-gradient(60%_120%_at_50%_50%,hsla(0,0%,100%,0)_0,rgba(252,205,238,.5)_100%)]">
+  <div class="container mx-auto px-1 h-1/2 md:h-1/2 ">
+    <div class="flex flex-col md:flex-row items-center gap-12">
+      <div class="w-full md:w-1/2 mt-3">
+        <Carrusel img1="/img/CarruselCar1.webp" img2="/img/info1.webp" img3="/img/info2.webp" />
+      </div>
+      <div class="md:w-1/2">
+        <h2 class="text-4xl md:text-4xl font-bold text-gray-900 mb-6">
+          Un detalle especial para esa persona especial
+        </h2>
+        <p class="text-xl text-gray-700">
+          Carrito de Hot Wheels, ideal para coleccionistas. Para aquellas personas que buscan algo mas personal y unico con amor.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
